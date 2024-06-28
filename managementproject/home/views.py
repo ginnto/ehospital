@@ -1,8 +1,9 @@
 from django.shortcuts import render
-
+from . models import *
 # Create your views here.
 
 def index(request):
-    return render(request,'hello.html')
+    obj = Doctors.objects.all()
+    return render(request,'index.html',{'var':obj})
 
 

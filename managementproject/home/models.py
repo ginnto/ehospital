@@ -25,7 +25,6 @@ class Patients(models.Model):
     def __str__(self):
         return self.name
 
-
 class Discharge(models.Model):
     patient = models.OneToOneField(Patients, on_delete=models.CASCADE)
     discharged = models.BooleanField(default=False)
@@ -34,7 +33,6 @@ class Discharge(models.Model):
 
     def __str__(self):
         return self.patient.name
-
 
 class DoctorReport(models.Model):
     patient = models.ForeignKey(Patients, on_delete=models.CASCADE)

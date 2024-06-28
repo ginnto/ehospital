@@ -18,3 +18,10 @@ class ptadmin(admin.ModelAdmin):
     list_editable = ['Address','Contact','Symptoms','Doctor','Status']
 admin.site.register(Patients,ptadmin)
 
+
+
+admin.site.register(Discharge)
+
+admin.site.register(DoctorReport)
+
+
