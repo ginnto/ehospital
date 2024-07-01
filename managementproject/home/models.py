@@ -7,12 +7,18 @@ class Department(models.Model):
     name = models.CharField(max_length=50)
     def __str__(self):
         return self.name
+
+
+
 class Doctors(models.Model):
     name = models.CharField(max_length=50)
     contact = models.CharField(max_length=50)
     department = models.ManyToManyField(Department)
     def __str__(self):
         return self.name
+
+
+
 
 class Patients(models.Model):
     name = models.CharField(max_length=50)
