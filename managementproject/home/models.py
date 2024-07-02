@@ -8,17 +8,13 @@ class Department(models.Model):
     def __str__(self):
         return self.name
 
-
-
 class Doctors(models.Model):
+    img= models.ImageField(upload_to='picture')
     name = models.CharField(max_length=50)
     contact = models.CharField(max_length=50)
     department = models.ManyToManyField(Department)
     def __str__(self):
         return self.name
-
-
-
 
 class Patients(models.Model):
     name = models.CharField(max_length=50)
