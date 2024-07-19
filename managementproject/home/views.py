@@ -1,11 +1,11 @@
 from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.db.models import Q
 from django.shortcuts import render
 from . models import *
 # Create your views here.
 
 def index(request):
     obj = Doctors.objects.all()
-
 # --------------------------------------------
     var = Paginator(obj,1)
     pgnum =int(request.GET.get('page',1))
@@ -14,8 +14,11 @@ def index(request):
     except(InvalidPage,EmptyPage):
         doc = var.page(var.num_pages)
 # ----------------------------------------------
+    return render(request,'index.html',{'var':doc})
 
-    return render(request,'index.html',{'var':obj})
-import math
-
+def search(request):
+    if 'q' in request.GET:
+        query = request.GET.get('q')
+        doc = Doctors.objects.all().filter(Q(name__icontains=query)|Q(contact__icontains=query))
+    return render(request,'search.html',{'d':doc})
 

@@ -31,9 +31,9 @@
         </li>
       </ul>
         <!----------search---------------->
-      <form class="d-flex" action="search" method="get">
-        <input class="form-control me-2" type="text" placeholder="Search" name="q">
-        <button class="btn btn-primary" type="submit">Search</button>
+      <form class="d-flex">
+        <input class="form-control me-2" type="text" placeholder="Search">
+        <button class="btn btn-primary" type="button">Search</button>
       </form>
         <!---------end-search---------------->
     </div>
@@ -53,7 +53,7 @@
 
 <div class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
-      {% for j in var %}
+      {% for j in d %}
   <div class="col">
     <div class="card h-100">
       <img src="{{j.img.url}}" class="card-img-top"

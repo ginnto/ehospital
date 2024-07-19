@@ -26,9 +26,8 @@
       <td>{{j.Symptoms}}</td>
       <td>{{j.Doctor}}</td>
      <td> {{j.Status}}</td>
-        <td><a href="{% url 'patientreport' %}"><button> Report </button></a></td>
-      <td><button> Discharge Details </button></td>
-
+        <td><a href="{% url 'patientreport' j.id %}"><button> Report </button></a></td>
+        <td><a href="{% url 'discharge_details' j.id %}"><button> Discharge Details </button></a></td>
     </tr>
   {% endfor %}
 
