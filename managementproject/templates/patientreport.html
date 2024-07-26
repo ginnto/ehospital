@@ -1,5 +1,4 @@
 {% extends 'doctorbase.html' %}
-
 {% block content %}
 <section class="h-100 h-custom" style="background-color: #8fc4b7;">
   <div class="container py-5 h-100">
@@ -10,42 +9,42 @@
             class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
             alt="Sample photo">
           <div class="card-body p-4 p-md-5">
-
             <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Patient Report of {{ i.name }}</h3>
-
             <form class="px-md-2" action="{% url 'patientreport' i.id %}" method="post">
-                {% csrf_token %}
+    {% csrf_token %}
 
-              <div data-mdb-input-init class="form-outline mb-4">
-                <input type="text" name="patient" placeholder="{{ i.name }}" class="form-control" disabled/>
-                <label class="form-label">Patient Name</label>
-              </div>
+        {% for i in messages%}
+       <h2 style="color:red"> {{i}} </h2>
+        {% endfor %}
 
-                <div data-mdb-input-init class="form-outline mb-4">
-                <input type="text" name="status" class="form-control" />
-                <label class="form-label">Status</label>
-              </div>
+<input type="hidden" name="doctor_id" value="{{ i.Doctor_id }}" />
 
-                <div data-mdb-input-init class="form-outline mb-4">
-                <input type="date" name="update_date" class="form-control" />
-                <label class="form-label">Update Date</label>
-              </div>
-               <div data-mdb-input-init class="form-outline mb-4">
-                <input type="text" name="admission_details" class="form-control" />
-                <label class="form-label">Admission Details</label>
-              </div>
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input type="text" name="patient" placeholder="{{ i.name }}" class="form-control" disabled/>
+        <label class="form-label">Patient Name</label>
+    </div>
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input type="text" name="status" class="form-control" />
+        <label class="form-label">Status</label>
+    </div>
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input type="text" name="admission_details" class="form-control" />
+        <label class="form-label">Admission Details</label>
+    </div>
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input type="text" name="medicine" class="form-control" />
+        <label class="form-label">Medicine</label>
+    </div>
 
-               <div data-mdb-input-init class="form-outline mb-4">
-                   <textarea name="medicine" class="form-control"></textarea>
-                <label class="form-label">Medicine</label>
-              </div>
+    <div data-mdb-input-init class="form-outline mb-4">
+        <input type="text" name="conclusion" class="form-control" />
+        <label class="form-label">Conclusion</label>
+    </div>
 
-             <div data-mdb-input-init class="form-outline mb-4">
-                 <textarea name="conclusion" class="form-control"></textarea>
-                <label class="form-label">Conclusion</label>
-              </div>
-              <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-lg mb-1">Submit</button>
-            </form>
+    <button type="submit" class="btn btn-primary btn-block mb-4">Submit</button>
+</form>
+
+
           </div>
         </div>
       </div>

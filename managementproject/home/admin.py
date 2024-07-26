@@ -20,8 +20,7 @@ admin.site.register(Patients,ptadmin)
 
 
 
-admin.site.register(Discharge)
 
-admin.site.register(DoctorReport)
+
 
 

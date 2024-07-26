@@ -31,11 +31,10 @@ class DoctorReport(models.Model):
     patient = models.OneToOneField(Patients, on_delete=models.CASCADE)
     doctor = models.ForeignKey(Doctors, on_delete=models.CASCADE)
     status = models.CharField(max_length=255)
-    update_date = models.DateField()
-    admission_details = models.DateField()
+    update_date = models.DateField(auto_now=True)
+    admission_details = models.CharField(max_length=255)
     medicine = models.TextField()
     conclusion = models.TextField()
-
     def __str__(self):
         return f'Doctor Report for {self.patient.name}'
 
@@ -43,10 +42,6 @@ class Discharge(models.Model):
     patient = models.ForeignKey(Patients, on_delete=models.CASCADE)
     doctor = models.ForeignKey(Doctors, on_delete=models.CASCADE)
     discharge_date = models.DateField()
-    discharge_summary = models.TextField()
-
     def __str__(self):
         return f'Discharge Summary for {self.patient.name}'
-
-
 

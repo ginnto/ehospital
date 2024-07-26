@@ -18,7 +18,9 @@ def index(request):
 
 def search(request):
     if 'q' in request.GET:
-        query = request.GET.get('q')
+        query = request.GET.get('q')  #query = 9946
         doc = Doctors.objects.all().filter(Q(name__icontains=query)|Q(contact__icontains=query))
+        print(query,doc)
+
     return render(request,'search.html',{'d':doc})
 

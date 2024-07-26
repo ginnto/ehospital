@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Doctor Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            line-height: 1.6;
+        }
+        strong {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <h1>Doctor Report for {{ report.patient.name }}</h1>
+    <p><strong>Doctor:</strong> {{ report.doctor.name }}</p>
+    <p><strong>Status:</strong> {{ report.status }}</p>
+    <p><strong>Update Date:</strong> {{ report.update_date }}</p>
+    <p><strong>Admission Details:</strong> {{ report.admission_details }}</p>
+    <p><strong>Medicine:</strong> {{ report.medicine }}</p>
+    <p><strong>Conclusion:</strong> {{ report.conclusion }}</p>
+</body>
+</html>
