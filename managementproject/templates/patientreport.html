@@ -13,8 +13,8 @@
             <form class="px-md-2" action="{% url 'patientreport' i.id %}" method="post">
     {% csrf_token %}
 
-        {% for i in messages%}
-       <h2 style="color:red"> {{i}} </h2>
+        {% for i in messages %}
+       <h4 style="color:red"> {{i}} </h4>
         {% endfor %}
 
 <input type="hidden" name="doctor_id" value="{{ i.Doctor_id }}" />

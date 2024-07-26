@@ -1,0 +1,19 @@
+<form method="post">
+    {% csrf_token %}
+    <label for="doctor_id">Doctor:</label>
+    <input type="text" id="doctor_id" name="doctor_id" value="{{ doctor_report.doctor.id }}" required><br>
+
+    <label for="status">Status:</label>
+    <input type="text" id="status" name="status" value="{{ doctor_report.status }}" required><br>
+
+    <label for="admission_details">Admission Details:</label>
+    <textarea id="admission_details" name="admission_details" required>{{ doctor_report.admission_details }}</textarea><br>
+
+    <label for="medicine">Medicine:</label>
+    <textarea id="medicine" name="medicine" required>{{ doctor_report.medicine }}</textarea><br>
+
+    <label for="conclusion">Conclusion:</label>
+    <textarea id="conclusion" name="conclusion" required>{{ doctor_report.conclusion }}</textarea><br>
+
+    <button type="submit">Update</button>
+</form>
